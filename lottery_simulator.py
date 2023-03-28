@@ -10,4 +10,13 @@ def lotto_numbers(range_min=1, range_max=49):
     return sorted(number_list[:6])
 
 
-print(lotto_numbers(1, 49))
+def get_player_numbers():
+    """
+    Asks user to enter 6 unique numbers from 1 to 49 and returns sorted list of numbers.
+    """
+    print("Enter numbers from 1 to 49")
+    player_numbers = [int(input()) for i in range(6)]  # temp generator
+    return sorted(player_numbers)
+
+
+print(get_player_numbers())
