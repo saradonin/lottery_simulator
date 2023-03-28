@@ -41,4 +41,29 @@ def get_player_numbers(range_min=1, range_max=49):
     return sorted(player_numbers)
 
 
-print(get_player_numbers())
+def compare():
+
+    bet = [1,2,3,4,5,6]  # temp test list
+    win = [1,2,3,9,5,6]  # temp test list
+
+    bet_str = ", ".join([str(i) for i in bet])
+    win_str = ", ".join([str(i) for i in win])
+
+    print(f"Your numbers: {bet_str}")
+    print(f"Winning numbers: {win_str}")
+
+    result = [i for i in bet if i in win]
+
+    if len(result) == 0:
+        return "You hit nothing. Better luck next time."
+    elif len(result) == 1:
+        return f"You hit only {len(result)} number. Better luck next time."
+    elif len(result) < 3:
+        return f"You hit only {len(result)} numbers! Better luck next time."
+    else:
+        return f"You hit {len(result)} numbers! Congratulations!"
+
+
+print(compare())
+
+
