@@ -42,9 +42,12 @@ def get_player_numbers(range_min=1, range_max=49):
 
 
 def compare():
-
-    bet = [1,2,3,4,5,6]  # temp test list
-    win = [1,2,3,9,5,6]  # temp test list
+    """
+    Takes player bet and lotto numbers and compares the result
+    :return: f string - text message
+    """
+    bet = get_player_numbers()
+    win = lotto_numbers()
 
     bet_str = ", ".join([str(i) for i in bet])
     win_str = ", ".join([str(i) for i in win])
@@ -62,6 +65,9 @@ def compare():
         return f"You hit only {len(result)} numbers! Better luck next time."
     else:
         return f"You hit {len(result)} numbers! Congratulations!"
+
+
+print(compare())
 
 
 print(compare())
